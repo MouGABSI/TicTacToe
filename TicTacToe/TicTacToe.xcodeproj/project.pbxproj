@@ -15,6 +15,7 @@
 		7DC8DFBC26538C3E003C7356 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC8DFBA26538C3E003C7356 /* LaunchScreen.storyboard */; };
 		7DC8DFC726538C3F003C7356 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8DFC626538C3F003C7356 /* TicTacToeTests.swift */; };
 		7DC8DFD226538C3F003C7356 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8DFD126538C3F003C7356 /* TicTacToeUITests.swift */; };
+		7DC8DFE426541AE9003C7356 /* XCUIElement+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8DFE326541AE9003C7356 /* XCUIElement+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7DC8DFCD26538C3F003C7356 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC8DFD126538C3F003C7356 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		7DC8DFD326538C3F003C7356 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC8DFE326541AE9003C7356 /* XCUIElement+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +124,19 @@
 		7DC8DFD026538C3F003C7356 /* TicTacToeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				7DC8DFE226541AC8003C7356 /* Helper */,
 				7DC8DFD126538C3F003C7356 /* TicTacToeUITests.swift */,
 				7DC8DFD326538C3F003C7356 /* Info.plist */,
 			);
 			path = TicTacToeUITests;
+			sourceTree = "<group>";
+		};
+		7DC8DFE226541AC8003C7356 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7DC8DFE326541AE9003C7356 /* XCUIElement+Extension.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC8DFD226538C3F003C7356 /* TicTacToeUITests.swift in Sources */,
+				7DC8DFE426541AE9003C7356 /* XCUIElement+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
