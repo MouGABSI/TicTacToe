@@ -90,6 +90,17 @@ class TicTacToeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["O"].visible(), "the second clicked button background image should be O")
     }
     
+    func testWinner() {
+        app.buttons["0_0"].tap()  // X
+        app.buttons["0_1"].tap()  // O
+        app.buttons["1_1"].tap() // X
+        app.buttons["0_2"].tap()  // O
+        app.buttons["2_2"].tap()  // X
+    
+        XCTAssertTrue(app.staticTexts["X is the winner!"].exists, "winner label should exist")
+        XCTAssertTrue(app.staticTexts["X is the winner!"].exists, "winner label should be visible")
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
