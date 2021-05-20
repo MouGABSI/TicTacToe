@@ -18,9 +18,26 @@ class TicTacToeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCheckForWinner() throws {
+        // Test that check winner returns the winner player
+        let homeViewController = ViewController()
+        homeViewController.gameBoard = [.X, .O, .X,
+                                        .O, .X, .O,
+                                        .X, .O, .X]
+        let winner = homeViewController.checkForWinner()
+        
+        XCTAssertEqual(winner, .X, "The player X should be the winner")
+    }
+    
+    func testDrawGame() throws {
+        // Test that check winner returns the winner player
+        let homeViewController = ViewController()
+        homeViewController.gameBoard = [.X, .O, nil,
+                                        .X, .X, .O,
+                                        .O, .X, .O]
+        let winner = homeViewController.checkForWinner()
+        
+        XCTAssertNil(winner, "There is no winner the game is draw")
     }
 
     func testPerformanceExample() throws {

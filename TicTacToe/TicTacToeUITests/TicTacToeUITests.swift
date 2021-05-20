@@ -77,6 +77,19 @@ class TicTacToeUITests: XCTestCase {
         XCTAssertTrue(app.buttons["X"].visible(), "the first clicked button background image should be X")
     }
 
+    func testAlterningBetweenPlayers() {
+        let randomRow    = Int.random(in: 0...1)
+        let randomColomn = Int.random(in: 0...1)
+        let randomStartButton = app.buttons["\(randomRow)_\(randomColomn)"]
+        randomStartButton.tap()
+        XCTAssertTrue(app.buttons["X"].exists, "the first clicked button background image should be X")
+        XCTAssertTrue(app.buttons["X"].visible(), "the first clicked button background image should be X")
+        let button02 = app.buttons["0_2"]
+        button02.tap()
+        XCTAssertTrue(app.buttons["O"].exists, "the second clicked button background image should be O")
+        XCTAssertTrue(app.buttons["O"].visible(), "the second clicked button background image should be O")
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
