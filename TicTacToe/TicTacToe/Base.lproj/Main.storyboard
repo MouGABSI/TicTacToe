@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XB-zE-2ni">
-                                <rect key="frame" x="5" y="295" width="404" height="404"/>
+                                <rect key="frame" x="5" y="249" width="404" height="404"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-l5-hCj">
                                         <rect key="frame" x="2" y="2" width="400" height="400"/>
@@ -76,7 +76,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9jn-dH-cUD">
                                                 <rect key="frame" x="0.0" y="134" width="400" height="132"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KH7-ah-6y8">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KH7-ah-6y8">
                                                         <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
@@ -154,13 +154,30 @@
                                     <constraint firstItem="ayC-l5-hCj" firstAttribute="leading" secondItem="8XB-zE-2ni" secondAttribute="leading" constant="2" id="xeL-2S-obw"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofB-0U-Rc2">
+                                <rect key="frame" x="113" y="779" width="188" height="54"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.67450980390000004" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="4cP-n3-xNJ"/>
+                                    <constraint firstAttribute="height" constant="54" id="SZL-sI-syc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="retryWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rD9-9V-gwZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tfT-oZ-eAo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9me-as-Y1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ofB-0U-Rc2" secondAttribute="bottom" constant="29" id="C9Z-QI-Wax"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tfT-oZ-eAo" secondAttribute="trailing" constant="20" id="EMM-TV-oZX"/>
-                            <constraint firstItem="8XB-zE-2ni" firstAttribute="top" secondItem="tfT-oZ-eAo" secondAttribute="bottom" constant="86" id="O83-nf-TVa"/>
+                            <constraint firstItem="ofB-0U-Rc2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ncf-kL-Kge"/>
+                            <constraint firstItem="8XB-zE-2ni" firstAttribute="top" secondItem="tfT-oZ-eAo" secondAttribute="bottom" constant="40" id="O83-nf-TVa"/>
                             <constraint firstItem="8XB-zE-2ni" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="ZkS-qL-cHO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8XB-zE-2ni" secondAttribute="trailing" constant="5" id="rXv-Rd-y2r"/>
                             <constraint firstItem="tfT-oZ-eAo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="tVh-ip-w5I"/>
@@ -178,7 +195,17 @@
                         <outlet property="buttonSix" destination="3iq-it-g31" id="3RC-2R-9rk"/>
                         <outlet property="buttonThree" destination="RaR-a7-bYk" id="mbi-zF-Y1s"/>
                         <outlet property="buttonTwo" destination="gJb-vY-Tmg" id="FD4-A5-r7w"/>
+                        <outlet property="retryButton" destination="ofB-0U-Rc2" id="kTo-TF-ubj"/>
                         <outlet property="winnerLabel" destination="tfT-oZ-eAo" id="PvA-Ht-hue"/>
+                        <outletCollection property="gameButtons" destination="Ur6-1O-LLT" collectionClass="NSMutableArray" id="W7O-Qm-QVJ"/>
+                        <outletCollection property="gameButtons" destination="gJb-vY-Tmg" collectionClass="NSMutableArray" id="iED-g5-sZe"/>
+                        <outletCollection property="gameButtons" destination="RaR-a7-bYk" collectionClass="NSMutableArray" id="QHI-1B-WKA"/>
+                        <outletCollection property="gameButtons" destination="KH7-ah-6y8" collectionClass="NSMutableArray" id="rT8-oD-V0f"/>
+                        <outletCollection property="gameButtons" destination="P5U-Tv-L2C" collectionClass="NSMutableArray" id="oEn-sL-Fv3"/>
+                        <outletCollection property="gameButtons" destination="3iq-it-g31" collectionClass="NSMutableArray" id="dcy-eV-bFY"/>
+                        <outletCollection property="gameButtons" destination="s6f-Gn-0F5" collectionClass="NSMutableArray" id="rVu-fK-NOo"/>
+                        <outletCollection property="gameButtons" destination="Xj8-Hm-Fdr" collectionClass="NSMutableArray" id="Dwr-jm-KOR"/>
+                        <outletCollection property="gameButtons" destination="gZb-bO-MYH" collectionClass="NSMutableArray" id="VGU-El-oUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

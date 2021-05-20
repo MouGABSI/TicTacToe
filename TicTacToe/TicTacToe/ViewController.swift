@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonSeven: UIButton!
     @IBOutlet weak var buttonEight: UIButton!
     @IBOutlet weak var buttonNine: UIButton!
+    @IBOutlet weak var retryButton: UIButton!
+    
+    @IBOutlet var gameButtons: [UIButton]!
     
     @IBOutlet weak var winnerLabel: UILabel!
     
@@ -43,13 +46,16 @@ class ViewController: UIViewController {
             gameBoard[space] = currentPlayer
             turnCount += 1
             
-            if turnCount >= 5, let winner = checkForWinner() {
+            if turnCount >= 4, let winner = checkForWinner() {
                 gameOver = true
                 winnerLabel.text = "\(winner) is the winner!"
                 winnerLabel.isHidden = false
+                retryButton.isHidden = false
             } else if (turnCount == 9) {
                 gameOver = true
+                winnerLabel.isHidden = false
                 winnerLabel.text = "It's a tie!"
+                retryButton.isHidden = false
             } else {
                 currentPlayer = currentPlayer.other()
             }
@@ -71,6 +77,17 @@ class ViewController: UIViewController {
         currentPlayer = .X
     }
     
+    @IBAction func retry(sender: AnyObject) {
+        currentPlayer = .X
+        gameButtons.forEach { $0.setTitle("", for: .normal) }
+        gameBoard = [nil, nil, nil,
+                     nil, nil, nil,
+                     nil, nil, nil
+                     ]
+        gameOver = false
+        winnerLabel.isHidden = true
+        turnCount = 0
+    }
     
 }
 
