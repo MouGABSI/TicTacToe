@@ -40,7 +40,6 @@ class TicTacToeUITests: XCTestCase {
         let button8     = app.buttons["2_2"]
         
         XCTAssertTrue(titleLabel.exists, "Title Label should exist")
-        XCTAssertTrue(winnerLabel.exists, "Winner Label should exist")
         XCTAssertTrue(button0.exists, "button in row 0 colomn 0 should exist")
         XCTAssertTrue(button1.exists, "button in row 0 colomn 1 should exist")
         XCTAssertTrue(button2.exists, "button in row 0 colomn 2 should exist")
